@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
 import { useFonts } from "expo-font";
-import { Text } from "./src/components/Text";
+import { Main } from "./src/Main";
 
 export default function App() {
   const [isFontsLoaded] = useFonts({
@@ -13,9 +12,9 @@ export default function App() {
   if (!isFontsLoaded) return null;
 
   return (
-    <View>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <>
       <StatusBar style="dark" />
-    </View>
+      <Main />
+    </>
   );
 }
