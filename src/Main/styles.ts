@@ -20,6 +20,8 @@ export const MenuContainer = styled.View`
 export const Footer = styled.View`
   min-height: 110px;
   background: #ffffff;
+  padding: 16px 24px;
+  justify-content: center;
 `;
 
 export const FooterContent = styled.SafeAreaView``;
