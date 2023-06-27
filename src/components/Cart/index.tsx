@@ -1,5 +1,6 @@
 import { FlatList, TouchableOpacity } from "react-native";
 import { CartItem } from "../../types/CartItem";
+import { Product } from "../../types/Product";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { Button } from "../Button";
 import { MinusCircle } from "../Icons/MinusCircle";
@@ -18,9 +19,10 @@ import {
 
 interface CartProps {
   cartItems: CartItem[];
+  onAdd: (product: Product) => void;
 }
 
-export function Cart({ cartItems }: CartProps) {
+export function Cart({ cartItems, onAdd }: CartProps) {
   return (
     <>
       {cartItems.length > 0 && (
@@ -53,7 +55,7 @@ export function Cart({ cartItems }: CartProps) {
               </ProductContainer>
 
               <Actions>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => onAdd(cartItem.product)}>
                   <PlusCircle />
                 </TouchableOpacity>
 
