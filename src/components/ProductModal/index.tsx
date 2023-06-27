@@ -1,8 +1,20 @@
-import { Modal } from "react-native";
+import { FlatList, Modal } from "react-native";
 import { Product } from "../../types/Product";
+import { formatCurrency } from "../../utils/formatCurrency";
+import { Button } from "../Button";
 import { Close } from "../Icons/Close";
 import { Text } from "../Text";
-import { CloseButton, ProductImage } from "./styles";
+import {
+  CloseButton,
+  Footer,
+  FooterContent,
+  Ingredient,
+  IngredientsContainer,
+  ModalBody,
+  Price,
+  ProductHeader,
+  ProductImage,
+} from "./styles";
 
 interface ProductModalProps {
   visible: boolean;
@@ -29,7 +41,52 @@ export function ProductModal({ visible, onClose, product }: ProductModalProps) {
           <Close />
         </CloseButton>
       </ProductImage>
-      <Text>Product modal</Text>
+
+      <ModalBody>
+        <ProductHeader>
+          <Text size={24} weight="600">
+            {product.name}
+          </Text>
+          <Text color="#666" style={{ marginTop: 8 }}>
+            {product.description}
+          </Text>
+        </ProductHeader>
+
+        {product.ingredients.length > 0 && (
+          <IngredientsContainer>
+            <Text color="#666" weight="600">
+              Ingredientes
+            </Text>
+
+            <FlatList
+              data={product.ingredients}
+              keyExtractor={(ingredient) => ingredient._id}
+              showsVerticalScrollIndicator={false}
+              style={{ marginTop: 16 }}
+              renderItem={({ item: ingredient }) => (
+                <Ingredient>
+                  <Text>{ingredient.icon}</Text>
+                  <Text size={14} color="#666" style={{ marginLeft: 16 }}>
+                    {ingredient.name}
+                  </Text>
+                </Ingredient>
+              )}
+            />
+          </IngredientsContainer>
+        )}
+      </ModalBody>
+
+      <Footer>
+        <FooterContent>
+          <Price>
+            <Text color="#666">Preço</Text>
+            <Text size={20} weight="600">
+              {formatCurrency(product.price)}
+            </Text>
+          </Price>
+          <Button onPress={() => {}}>Adicionar ao pedido</Button>
+        </FooterContent>
+      </Footer>
     </Modal>
   );
 }
