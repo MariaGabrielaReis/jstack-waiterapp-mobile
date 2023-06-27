@@ -23,6 +23,10 @@ interface CartProps {
 }
 
 export function Cart({ cartItems, onAdd }: CartProps) {
+  const total = cartItems.reduce((accumulator, cartItem) => {
+    return accumulator + cartItem.quantity * cartItem.product.price;
+  }, 0);
+
   return (
     <>
       {cartItems.length > 0 && (
@@ -74,7 +78,7 @@ export function Cart({ cartItems, onAdd }: CartProps) {
             <>
               <Text color="#666">Preço</Text>
               <Text size={20} weight="600">
-                {formatCurrency(120)}
+                {formatCurrency(total)}
               </Text>
             </>
           ) : (
