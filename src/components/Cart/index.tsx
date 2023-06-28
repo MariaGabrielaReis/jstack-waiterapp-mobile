@@ -32,6 +32,7 @@ export function Cart({
   onDecrement,
   onConfirmOrder,
 }: CartProps) {
+  const [isLoading, setIsLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const total = cartItems.reduce((accumulator, cartItem) => {
@@ -110,7 +111,11 @@ export function Cart({
             <Text color="#999">Seu carrinho está vazio</Text>
           )}
         </Total>
-        <Button onPress={handleConfirmOrder} disabled={cartItems.length === 0}>
+        <Button
+          onPress={handleConfirmOrder}
+          disabled={cartItems.length === 0}
+          loading={isLoading}
+        >
           Confirmar pedido
         </Button>
       </Summary>

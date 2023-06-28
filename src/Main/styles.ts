@@ -25,3 +25,9 @@ export const Footer = styled.View`
 `;
 
 export const FooterContent = styled.SafeAreaView``;
+
+export const CenteredContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+`;
