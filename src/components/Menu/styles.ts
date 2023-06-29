@@ -2,7 +2,6 @@ import styled from "styled-components/native";
 
 export const ProductContainer = styled.TouchableOpacity`
   flex-direction: row;
-  align-items: center;
 `;
 
 export const ProductImage = styled.Image`
@@ -14,6 +13,7 @@ export const ProductImage = styled.Image`
 export const ProductDetails = styled.View`
   margin-left: 16px;
   flex: 1;
+  justify-content: space-between;
 `;
 
 export const Separator = styled.View`
@@ -25,6 +25,6 @@ export const Separator = styled.View`
 
 export const AddToCartButton = styled.TouchableOpacity`
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   right: 0;
 `;

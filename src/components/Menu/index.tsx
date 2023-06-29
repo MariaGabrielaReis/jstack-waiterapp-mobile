@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import { Product } from "../../types/Product";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { PlusCircle } from "../Icons/PlusCircle";
@@ -40,6 +40,8 @@ export function Menu({ onAddToCart, products }: MenuProps) {
         data={products}
         keyExtractor={(product) => product._id}
         ItemSeparatorComponent={Separator}
+        style={{ marginTop: 32 }}
+        contentContainerStyle={{ paddingHorizontal: 24, paddingBottom: 24 }}
         renderItem={({ item: product }) => {
           return (
             <ProductContainer onPress={() => handleOpenModal(product)}>
@@ -49,10 +51,18 @@ export function Menu({ onAddToCart, products }: MenuProps) {
                 }}
               />
               <ProductDetails>
-                <Text weight="600">{product.name}</Text>
-                <Text size={14} color={"#66666"} style={{ marginVertical: 8 }}>
-                  {product.description}
-                </Text>
+                <View>
+                  <Text weight="600">{product.name}</Text>
+                  <Text
+                    size={14}
+                    color={"#66666"}
+                    style={{ marginVertical: 8 }}
+                    numberOfLines={2}
+                  >
+                    {product.description}
+                  </Text>
+                </View>
+
                 <Text size={14} weight="600">
                   {formatCurrency(product.price)}
                 </Text>
@@ -64,8 +74,6 @@ export function Menu({ onAddToCart, products }: MenuProps) {
             </ProductContainer>
           );
         }}
-        style={{ marginTop: 32 }}
-        contentContainerStyle={{ paddingHorizontal: 24 }}
       />
     </>
   );
