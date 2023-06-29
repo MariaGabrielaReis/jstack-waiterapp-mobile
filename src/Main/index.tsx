@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
 import { Button } from "../components/Button";
 import { Cart } from "../components/Cart";
@@ -8,9 +8,10 @@ import { Empty } from "../components/Icons/Empty";
 import { Menu } from "../components/Menu";
 import { TableModal } from "../components/TableModal";
 import { Text } from "../components/Text";
-import { products as mockProducts } from "../mocks/products";
 import { CartItem } from "../types/CartItem";
+import { Category } from "../types/Category";
 import { Product } from "../types/Product";
+import { api } from "../utils/api";
 import {
   CategoriesContainer,
   CenteredContainer,
@@ -24,8 +25,19 @@ export function Main() {
   const [isTableModalVisible, setIsTableModalVisible] = useState(false);
   const [selectedTable, setSelectedTable] = useState("");
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [products, setProducts] = useState<Product[]>(mockProducts);
-  const [loading, setLoading] = useState(false);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.all([api.get("/categories"), api.get("/products")]).then(
+      ([{ data: categories }, { data: products }]) => {
+        setCategories(categories);
+        setProducts(products);
+        setLoading(false);
+      }
+    );
+  }, []);
 
   function handleSaveTable(table: string) {
     setSelectedTable(table);
@@ -95,7 +107,7 @@ export function Main() {
         ) : (
           <>
             <CategoriesContainer>
-              <Categories />
+              <Categories categories={categories} />
             </CategoriesContainer>
 
             {products.length > 0 ? (

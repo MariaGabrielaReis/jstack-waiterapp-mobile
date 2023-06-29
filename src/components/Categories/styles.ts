@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { isAndroid } from "../../utils/checkPlatform";
 
-export const Category = styled.TouchableOpacity`
+export const CategoryContainer = styled.TouchableOpacity`
   align-items: center;
   margin-left: 24px;
 `;
