@@ -44,6 +44,7 @@ export function Cart({
 
   async function handleConfirmOrder() {
     setIsLoading(true);
+
     const payload = {
       table: selectedTable,
       products: cartItems.map((cartItem) => ({
@@ -52,6 +53,8 @@ export function Cart({
       })),
     };
     await api.post("/orders", payload);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     setIsLoading(true);
     setIsModalVisible(true);
   }
