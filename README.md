@@ -1,15 +1,14 @@
 <div align="center"> <img src="https://user-images.githubusercontent.com/69374340/212697368-5eff469f-bbd8-4a96-80ba-e539367e1a20.png" /> </div>
 
-<img align="left" src="https://github.com/MariaGabrielaReis/jstack-waiterapp-mobile/assets/69374340/7a46e510-28e3-4d78-b724-d28f2b4d9c16" width="280"/>
+<img align="left" src="https://github.com/MariaGabrielaReis/jstack-waiterapp-mobile/assets/69374340/7a46e510-28e3-4d78-b724-d28f2b4d9c16" width="285"/>
 
 Mobile para o projeto WAITERAPP, um app para restaurantes que permite criar cardápios, anotar e gerenciar pedidos! 🍕 <br>
 **Aplicação construída num evento do JStack** :fire:
 
 > :hammer_and_wrench: Techs e ferramentas: **TypeScript, React Native, Expo, Styled Components, Axios**
 
-### :gear: Como rodar
-
-Com o [Node](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/) e [Git](https://git-scm.com/) instalados, siga o tutorial abaixo:
+#### :gear: Como rodar
+Siga o tutorial abaixo com o [Node](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/) e [Git](https://git-scm.com/) instalados:
 
 ```bash
 # Clone o repositório do servidor
