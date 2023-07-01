@@ -13,7 +13,7 @@ Com o [Node](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/) e [Git](https
 
 ```bash
 # Clone o repositório do servidor
-$ git clone https://github.com/MariaGabrielaReis/jstack-waiterapp-api.git
+$ git clone https://github.com/MariaGabrielaReis/waiterapp-api.git
 
 # Instale as dependências do projeto, assim como suas tipagens
 $ yarn
@@ -22,7 +22,7 @@ $ yarn
 $ yarn dev
 
 # Clone esse repositório
-$ git clone https://github.com/MariaGabrielaReis/jstack-waiterapp-mobile.git
+$ git clone https://github.com/MariaGabrielaReis/waiterapp-mobile.git
 
 # Instale as dependências do projeto, assim como suas tipagens
 $ yarn
