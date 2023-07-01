@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FlatList, TouchableOpacity } from "react-native";
+
 import { CartItem } from "../../types/CartItem";
 import { Product } from "../../types/Product";
 import { api } from "../../utils/api";

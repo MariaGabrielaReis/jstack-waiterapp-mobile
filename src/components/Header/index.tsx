@@ -1,4 +1,5 @@
 import { TouchableOpacity } from "react-native";
+
 import { Text } from "../Text";
 import { Container, Content, OrderHeader, Table } from "./styles";
 

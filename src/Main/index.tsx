@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
+
 import { Button } from "../components/Button";
 import { Cart } from "../components/Cart";
 import { Categories } from "../components/Categories";

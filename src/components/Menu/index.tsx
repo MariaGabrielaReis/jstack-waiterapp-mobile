@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FlatList, View } from "react-native";
+
 import { Product } from "../../types/Product";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { PlusCircle } from "../Icons/PlusCircle";

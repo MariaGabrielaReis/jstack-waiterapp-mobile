@@ -1,4 +1,5 @@
 import { Modal } from "react-native";
+
 import { CheckCircle } from "../Icons/CheckCircle";
 import { Text } from "../Text";
 import { Container, OkButton } from "./styles";

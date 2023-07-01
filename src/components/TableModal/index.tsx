@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Modal, TouchableOpacity } from "react-native";
+
 import { isAndroid } from "../../utils/checkPlatform";
 import { Button } from "../Button";
 import { Close } from "../Icons/Close";
